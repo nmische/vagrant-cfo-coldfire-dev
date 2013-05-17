@@ -1,0 +1,6 @@
+.DS_Store
+.vagrant
+data_bags/*
+wwwroot/
+!data_bags/README.md
+ColdFusion_10_WWEJ*.bin
