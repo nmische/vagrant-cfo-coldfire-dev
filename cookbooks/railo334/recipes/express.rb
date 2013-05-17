@@ -24,6 +24,7 @@ remote_file "#{Chef::Config['file_cache_path']}/railo-3.3.4.003-railo-express-wi
   mode "0744"
   owner "root"
   group "root"
+  not_if { File.directory?("#{node['railo334']['install_path']}") }
 end
 
 # Extract the installer
@@ -33,6 +34,7 @@ execute "untar_installer" do
   action :run
   user "root"
   cwd "#{Chef::Config['file_cache_path']}"
+  not_if { File.directory?("#{node['railo334']['install_path']}") }
 end
 
 # Move the installation
